@@ -1,0 +1,42 @@
+Load testing is a critical component in building reliable systems.  This lab walks you through using a load test framework, Locust, to test a Flask Microservice. Let's get started.  
+
+Note: We recommend that you open this notebook in the most updated version Google Chrome for the most consistent experience.
+
+Run Flask and test it out
+
+Open a terminal in Visual Studio Code.
+
+cd into the projects directory:  cd /home/coder/project
+
+install virtualenv:  python3 -m pip install virtualenv
+
+create a virtualenv: /home/coder/.local/bin/virtualenv VENV
+
+source the virtualenv (activate it):  source VENV/bin/activate
+
+cd into flask project:  cd /home/coder/project/docker-flask-locust
+
+install software:  make install
+
+run flask:  python app.py
+
+Now open up browser preview and test out the Microservice, by typing in the following:
+
+http://127.0.0.1:5000/
+
+Load Test
+
+Open second terminal in Visual Studio Code.
+
+cd into the projects directory:  cd /home/coder/project
+
+source the virtualenv (activate it):  source VENV/bin/activate
+
+cd into flask project:  cd /home/coder/project/docker-flask-locust
+
+Start the locust load test by running the following command:  locust -H 127.0.0.1 -f locustfile.py 
+
+Open up the Browser Preview and navigate to localhost:8089 and fill out the following fields as shown in the screenshot: Number of total users:  2, Spawn rate: 2, Host: http://127.0.0.1:8080
+
+Select 'Start swarming' to start the load test.
+
